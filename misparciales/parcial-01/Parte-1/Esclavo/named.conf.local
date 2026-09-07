@@ -1,0 +1,24 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//Se incluye la clave TSIG
+include "/etc/bind/keys-maestro.conf";
+
+zone "empresa.local" {
+        type slave;
+	//Direccion IP del DNS maestro y clave TSIG para autenticar las transferencias
+        masters { 192.168.50.2 key esclavo-key; };
+        file "/var/cache/bind/db.empresa.local";
+};
+
+zone "50.168.192.in-addr.arpa" {
+        type slave;
+	//Maestro de la zona y autenticación mediante TSIG.
+        masters { 192.168.50.2 key esclavo-key; };
+        file "/var/cache/bind/db.192.168.50";
+};

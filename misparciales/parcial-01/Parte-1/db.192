@@ -1,0 +1,18 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    3600
+; TTL predeterminado de los registros de la zona inversa.
+
+@       IN      SOA     ns1.empresa.local. root.empresa.local. (
+                         2026090401     ; Serial
+                         3600           ; Refresh: 1 hora
+                         900            ; Retry: 15 minutos
+                         1209600        ; Expire: 14 días
+                         3600 )         ; Minimum TTL: 1 hora
+;
+@       IN      NS      maestro.empresa.local.
+@	IN	NS	esclavo.empresa.local.
+2	IN	PTR	maestro.empresa.local.
+3       IN      PTR     esclavo.empresa.local.
+

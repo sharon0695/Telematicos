@@ -1,0 +1,72 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//Clave TSIG 
+include "/etc/bind/keys-esclavo.conf";
+
+/*Zona hacia adelante*/
+zone "empresa.local" {
+type master;
+file "/var/lib/bind/db.empresa.local";
+
+//Solo transferencias de zona con la clave TSIG
+allow-transfer { key esclavo-key; };
+//Habilitar notify para notificar al esclavo cuando aumente el serial
+notify yes;
+//Direccion que recibe la notificacion de los cambios
+also-notify {192.168.50.3; };
+
+//Permitir generar las diferencias para las transferencias incrementales
+ixfr-from-differences yes;
+};
+
+/*Zona inversa*/
+zone "50.168.192.in-addr.arpa" {
+type master;
+file "/var/lib/bind/db.192";
+
+//Solo transferencias de zona con la clave TSIG
+allow-transfer { key esclavo-key; };
+//Habilitar notify para notificar al esclavo cuando aumente el serial
+notify yes;
+//Direccion que recibe la notificacion de los cambios
+also-notify {192.168.50.3; };
+
+//Permitir generar las diferencias para las transferencias incrementales
+ixfr-from-differences yes;
+};
+
+//Seccion de configuracion auditoria
+logging {
+    //Registro de consultas DNS realizadas al servidor.
+    channel queries_log {
+        file "/var/log/named/queries.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    //Registro de transferencias
+    channel transfers_log {
+        file "/var/log/named/transfers.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    //Registro de eventos relacionados con seguridad.
+    channel security_log {
+        file "/var/log/named/security.log" versions 3 size 5m;
+        severity info;
+        print-time yes;
+    };
+
+    //Asociación de cada categoría con su archivo.
+    category queries { queries_log; };
+    category xfer-in { transfers_log; };
+    category xfer-out { transfers_log; };
+    category security { security_log; };
+}; 
