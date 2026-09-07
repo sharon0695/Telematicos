@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Sitio de prueba Apache</title>
+
+<link rel="stylesheet" href="sitio.css">
+``
+</head>
+<body>
+
+```
+<header>
+    <div class="contenedor">
+        <h1>Sitio de prueba Apache Sharon</h1>
+        <p class="subtitulo"> Evaluación del comportamiento de diferentes recursos web </p>
+    </div>
+</header>
+
+<main class="contenedor">
+    <section class="introduccion">
+        <h2>Evaluación de compresión HTTP</h2>
+
+        <p>
+            Este sitio fue creado para evaluar el comportamiento de Apache
+            al servir diferentes tipos de recursos y observar cuáles
+            presentan una alta, baja o nula compresibilidad.
+        </p>
+
+        <p>
+            Los recursos utilizados incluyen HTML, CSS, JavaScript, JSON,
+            XML, SVG, texto plano, imágenes y archivos binarios.
+        </p>
+    </section>
+
+
+    <!-- IMÁGENES -->
+
+    <section class="seccion">
+        <h2>Recursos multimedia</h2>
+        <div class="galeria">
+            <div class="tarjeta">
+                <h3>Imagen JPEG</h3>
+                <img src="imagen.jpg" alt="Imagen JPEG de prueba">
+                <p> Formato JPEG. Se utiliza para comprobar el comportamiento de la compresión sobre imágenes que ya utilizan compresión. </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Imagen PNG</h3>
+                <img src="imagen.png" alt="Imagen PNG de prueba">
+                <p> Formato PNG. Se utiliza como recurso multimedia para las pruebas de compresión. </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Gráfico SVG</h3>
+                <img src="imagen.svg" alt="Gráfico SVG de prueba">
+                <p> Formato SVG. Al ser XML basado en texto, presenta alta compresibilidad. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATOS -->
+    <section class="seccion">
+        <h2>Datos y documentos</h2>
+        <div class="recursos">
+            <a class="boton" href="datos.json" target="_blank"> Ver datos JSON </a>
+            <a class="boton" href="datos.xml" target="_blank"> Ver datos XML </a>
+            <a class="boton" href="texto.txt" target="_blank"> Ver texto plano </a>
+        </div>
+        <p class="descripcion"> Estos archivos permiten comprobar cómo Apache sirve diferentes recursos basados en texto. </p>
+    </section>
+
+    <!-- ARCHIVOS BINARIOS -->
+    <section class="seccion">
+        <h2>Archivos binarios</h2>
+        <div class="recursos">
+            <a class="boton" href="video.mp4" target="_blank"> Abrir video MP4 </a>
+            <a class="boton" href="paquete.zip" download> Descargar paquete ZIP</a>
+        </div>
+
+        <p class="descripcion">
+            Los archivos multimedia y comprimidos se utilizan para
+            comprobar recursos donde aplicar compresión HTTP adicional
+            normalmente no representa una ventaja.
+        </p>
+    </section>
+
+    <!-- RECURSOS DE PRUEBA -->
+    <section class="seccion pruebas">
+        <h2>Recursos utilizados para las pruebas</h2>
+        <p> Los siguientes archivos fueron preparados para evaluar la compresión de Apache según el tipo de contenido. </p>
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Recurso</th>
+                        <th>Comportamiento esperado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>
+                            <a href="index.html">index.html</a>
+                        </td>
+                        <td>Alta compresibilidad</td>
+                    </tr>
+
+                    <tr>
+                        <td>CSS</td>
+                        <td>
+                            <a href="styles.css">styles.css</a>
+                            /
+                            <a href="styles-min.css">styles-min.css</a>
+                        </td>
+                        <td>Alta compresibilidad</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td> <a href="app.js">app.js</a> </td>
+                        <td>Alta compresibilidad</td>
+                    </tr>
+
+                    <tr>
+                        <td>JSON</td>
+                        <td> <a href="datos.json">datos.json</a> </td>
+                        <td>Muy alta compresibilidad</td>
+                    </tr>
+                    <tr>
+                        <td>XML</td>
+                        <td> <a href="datos.xml">datos.xml </a></td>
+                        <td>Alta compresibilidad</td>
+                    </tr>
+                    <tr>
+                        <td>Texto</td>
+                        <td>
+                            <a href="texto.txt">texto.txt</a>
+                        </td>
+                        <td>Muy alta compresibilidad</td>
+                    </tr>
+                    <tr>
+                        <td>JPEG / PNG</td>
+                        <td> imagen.jpg / imagen.png </td>
+                        <td>Nulo o negativo</td>
+                    </tr>
+                    <tr>
+                        <td>Video / ZIP</td>
+                        <td> video.mp4 / paquete.zip ,</td>
+                        <td>Nulo o negativo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- ESTADO -->
+    <section class="seccion estado">
+        <h2>Estado del sitio</h2>
+        <p id="estado-sitio"> Comprobando funcionamiento de JavaScript...</p>
+        <button id="boton-prueba"> Realizar prueba </button>
+    </section>
+</main>
+<footer>
+    <div class="contenedor">
+        <p>Sitio de prueba desarrollado para la práctica de Apache HTTP Server. </p>
+        <p>Recursos destinados a pruebas de compresión HTTP. </p>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+```
+</body>
+</html>
+
+
+
+

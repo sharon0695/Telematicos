@@ -1,0 +1,36 @@
+;;;;;;;;;;
+Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU;;Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU
+Sin comprimir (base);858.164 B;1;0,00%;0,006166 s;;Sin comprimir (base);2.526.671 B;1;0,00%;0,036370 s
+gzip nivel 1;6.843 B;0,007974;99,20%;0,005531 s;;gzip nivel 1;94.500 B;0,037400991;96,26%;0,013970 s
+gzip nivel 6;3.580 B;0,004172;99,58%;0,010221 s;;gzip nivel 6;91.420 B;0,036181996;96,38%;0,021680 s
+gzip nivel 9;3.580 B;0,004172;99,58%;0,011194 s;;gzip nivel 9;90.729 B;0,035908514;96,41%;0,033333 s
+brotli calidad 5;183 B;0,000213;99,98%;0,008032 s;;brotli calidad 5;37.046 B;0,01466198;98,53%;0,034564 s
+brotli calidad 11;151 B;0,000176;99,98%;0,030947 s;;brotli calidad 11;32.621 B;0,012910664;98,71%;7,894726 s*
+Recurso evaluado: index-grande.html;;;Tamaño original: 858.164 B;;;Recurso evaluado: datos.json;;;Tamaño original: 2.526.671 B;
+;;;;;;;;;;
+Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU;;Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU
+Sin comprimir (base);1.155.000 B;1;0,00%;0,003349 s;;Sin comprimir (base);1.496.017 B;1;0,00%;0,003595 s
+gzip nivel 1;13.711 B;0,011871;98,81%;0,006643 s;;gzip nivel 1;11.961 B;0,007995;99,20%;0,010822 s
+gzip nivel 6;5.324 B;0,004610;99,54%;0,013208 s;;gzip nivel 6;5.977 B;0,003995;99,60%;0,016663 s
+gzip nivel 9;5.324 B;0,004610;99,54%;0,017931 s;;gzip nivel 9;5.977 B;0,003995;99,60%;0,015753 s
+brotli calidad 5;249 B;0,000216;99,98%;0,008168 s;;brotli calidad 5;167 B;0,000112;99,99%;5,029245 s*
+brotli calidad 11;174 B;0,000151;99,98%;0,028843 s;;brotli calidad 11;125 B;0,000084;99,99%;0,033152 s
+Recurso evaluado: styles.css;;;Tamaño original: 1.155.000 B;;;Recurso evaluado: datos.xml;;;Tamaño original: 1.496.017 B;
+;;;;;;;;;;
+Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU;;Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU
+Sin comprimir (base);642.500 B;1;0,00%;0,007471 s;;Sin comprimir (base);402.071 B;1;0,00%;5,009787 s*
+gzip nivel 1;6.322 B;0,009840;99,02%;0,010107 s;;gzip nivel 1;3.463 B;0,008613;99,14%;0,006755 s
+gzip nivel 6;3.025 B;0,004708;99,53%;0,011650 s;;gzip nivel 6;1.727 B;0,004295;99,57%;0,009000 s
+gzip nivel 9;3.025 B;0,004708;99,53%;0,014893 s;;gzip nivel 9;1.727 B;0,004295;99,57%;0,015711 s
+brotli calidad 5;141 B;0,000219;99,98%;0,006679 s;;brotli calidad 5;124 B;0,000308;99,97%;0,007578 s
+brotli calidad 11;139 B;0,000216;99,98%;0,029357 s;;brotli calidad 11;137 B;0,000341;99,97%;0,027536 s
+Recurso evaluado: styles-min.css;;;Tamaño original: 642.500 B;;;Recurso evaluado: imagen.svg;;;Tamaño original: 402.071 B;
+;;;;;;;;;;
+Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU;;Algoritmo / nivel;Tamaño;Ratio;Ahorro %;Tiempo / CPU
+Sin comprimir (base);996.000 B;1;0,00%;5,064339 s*;;Sin comprimir (base);13.200.000 B;1;0,00%;0,016801 s
+gzip nivel 1;10.431 B;0,010472892;98,95%;0,006900 s;;gzip nivel 1;76.862 B;0,005823;99,42%;0,056654 s
+gzip nivel 6;4.659 B;0,004677711;99,53%;0,011887 s;;gzip nivel 6;44.880 B;0,003400;99,66%;0,081325 s
+gzip nivel 9;4.659 B;0,004677711;99,53%;0,012299 s;;gzip nivel 9;44.880 B;0,003400;99,66%;0,083053 s
+brotli calidad 5;243 B;0,000243976;99,98%;0,007951 s;;brotli calidad 5;177 B;0,000013;100,00%;0,025923 s
+brotli calidad 11;232 B;0,000232932;99,98%;0,026741 s;;brotli calidad 11;93 B;0,000007;100,00%;0,238948 s
+Recurso evaluado: app.js;;;Tamaño original: 996.000 B;;;Recurso evaluado: texto.txt;;;Tamaño original: 13.200.000 B;
